@@ -5,6 +5,7 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var axios = require("axios");
 var fs = require("fs");
+var moment = require('moment');
 
 // concert this
 var getMeConcerts = function (bandName) {
@@ -15,7 +16,8 @@ var getMeConcerts = function (bandName) {
             console.log('--------------'); //  break visually
             console.log("Venue: " + response.data[i].venue.name); // venue name
             console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country); // venue location
-            console.log("Date: " + response.data[i].datetime); // date
+            var formattedDate = moment(response.data[i].datetime).format("MM/DD/YYYY"); //  use moment to format dates
+            console.log("Date: " + formattedDate); // date
             console.log("Lineup: " + response.data[i].lineup); // lineup
         }
     })
