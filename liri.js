@@ -131,7 +131,7 @@ var getMeMoviesDEFAULT = function() {
     axios
     .get("http://www.omdbapi.com/?t=mr-nobody&apikey=trilogy")
     .then(function(response) {
-        console.log("You'll need to enter a moview name! But here is a SAMPLE of what you would receive: \n-----------------------------");
+        console.log("You'll need to enter a movie name! But here is a SAMPLE of what you would receive: \n-----------------------------");
         console.log('Title: ' + response.data.Title); // movie title
         console.log('Release Year: ' + response.data.Year); //  release year
         console.log('IMDB rating: ' + response.data.imdbRating); // imdb rating
